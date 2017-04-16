@@ -22,6 +22,7 @@ class GameRow extends Component {
             <div key={i+''+dot}
                  style={styles.guessRowCol}>
               <button onClick={()=> this.changeCode(i, 'up')}
+                      className="change-dot-up"
                       disabled={!!this.props.score}> + </button>
               
               <div style={
@@ -30,6 +31,7 @@ class GameRow extends Component {
               ></div>
               
               <button onClick={()=> this.changeCode(i, 'dn')}
+                      className="change-dot-dn"
                       disabled={!!this.props.score}> - </button>
             </div>
           ) )
@@ -46,7 +48,10 @@ class GameRow extends Component {
               return (<div key={i} style={
                 Object.assign({}, styles.scoreDot, sdc)}></div>);
             }) :
-            <button onClick={this.props.onGuess}>GO!</button>
+            <button onClick={this.props.onGuess}
+                    className="make-guess">
+              GO!
+            </button>
           }
         </div>
       </div>
@@ -58,8 +63,8 @@ GameRow.propTypes = {
   onGuess: React.PropTypes.func,
   onChangeGuess: React.PropTypes.func,
   score: React.PropTypes.array,
-  code: React.PropTypes.array.required,
-  dotArity: React.PropTypes.number.required,
+  code: React.PropTypes.array.isRequired,
+  dotArity: React.PropTypes.number.isRequired,
 };
 
 export default GameRow;

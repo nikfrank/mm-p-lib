@@ -10,18 +10,18 @@ import specGuess from '../GuessRow/tests/spec';
 
 storiesOf('GuessRow', module)
 
-  .add('guessed something', ()=>{
+  .add('guessed something', () => {
     specs(() => specGuess({ describe, it })());
 
-    return guessStory(guessStub);
+    return guessStory(guessStub).p;
   })
 
-  .add('not yet guessed something', ()=>{
+  .add('not yet guessed something', () => {
     specs(() => specGuess({ describe, it })());
 
     return guessStory({
       onGuess: action('guess'),
       onChangeGuess: action('changeGuess'),
       ...noGuessStub,
-    });
-  })
+    }).p;
+  });

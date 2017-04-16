@@ -15,9 +15,9 @@ export default {
   },
 
   dot0: {
-    border: '15px solid red,'
+    border: '15px solid red,',
   },
-  
+
   dot1: {
     border: '15px solid orange',
   },
